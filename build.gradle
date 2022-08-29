@@ -132,10 +132,6 @@ subprojects {
         summary = "JDBC input plugin for Embulk"
         homepage = "https://github.com/embulk/embulk-input-jdbc"
         licenses = [ "Apache-2.0" ]
-
-        into("default_jdbc_driver") {
-            from configurations.defaultJdbcDriver
-        }
     }
 
     javadoc {
