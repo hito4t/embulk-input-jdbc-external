@@ -100,7 +100,7 @@ public class OracleInputPlugin
             if (!oracleTask.getDatabase().isPresent()) {
                 throw new IllegalArgumentException("Field 'database' is not set.");
             }
-            url = String.format("jdbc:oracle:thin:@%s:%d:%s",
+            url = String.format("jdbc:oracle:thin:@%s:%d/%s",
                     oracleTask.getHost().get(), oracleTask.getPort(), oracleTask.getDatabase().get());
         }
 
