@@ -27,7 +27,7 @@ import static org.junit.Assert.assertThat;
 
 public class BasicTest
 {
-    private static final String BASIC_RESOURCE_PATH = "org/embulk/input/oracle/test/expect/basic/";
+    private static final String BASIC_RESOURCE_PATH = "/org/embulk/input/oracle/test/expect/basic/";
 
     private static ConfigSource loadYamlResource(TestingEmbulk embulk, String fileName)
     {

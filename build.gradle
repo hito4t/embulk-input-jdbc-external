@@ -6,12 +6,12 @@ plugins {
     id "maven-publish"
     id "signing"
     id 'checkstyle'
-    id "org.embulk.embulk-plugins" version "0.5.2" apply false
+    id "org.embulk.embulk-plugins" version "0.6.1" apply false
 }
 
 allprojects {
     group = "org.embulk"
-    version = "0.13.0"
+    version = "0.14.0"
     description = "Selects records from a table."
 }
 
@@ -44,10 +44,9 @@ subprojects {
     }
 
     dependencies {
-        compileOnly "org.embulk:embulk-api:0.10.36"
-        compileOnly "org.embulk:embulk-spi:0.10.36"
+        compileOnly "org.embulk:embulk-spi:0.11"
 
-        compile("org.embulk:embulk-util-config:0.3.1") {
+        implementation("org.embulk:embulk-util-config:0.3.4") {
             // They conflict with embulk-core. They are once excluded here,
             // and added explicitly with versions exactly the same with older embulk-core (until v0.10.31).
             exclude group: "com.fasterxml.jackson.core", module: "jackson-annotations"
@@ -59,18 +58,18 @@ subprojects {
 
         // They are once excluded from transitive dependencies of other dependencies,
         // and added explicitly with versions exactly the same with older embulk-core (until 0.10.31).
-        compile "com.fasterxml.jackson.core:jackson-annotations:2.6.7"
-        compile "com.fasterxml.jackson.core:jackson-core:2.6.7"
-        compile "com.fasterxml.jackson.core:jackson-databind:2.6.7"
-        compile "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.6.7"
-        compile "javax.validation:validation-api:1.1.0.Final"
+        implementation "com.fasterxml.jackson.core:jackson-annotations:2.6.7"
+        implementation "com.fasterxml.jackson.core:jackson-core:2.6.7"
+        implementation "com.fasterxml.jackson.core:jackson-databind:2.6.7.5"
+        implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.6.7"
+        implementation "javax.validation:validation-api:1.1.0.Final"
 
-        compile "org.embulk:embulk-util-json:0.1.1"
-        compile "org.embulk:embulk-util-timestamp:0.2.1"
+        implementation "org.embulk:embulk-util-json:0.3.0"
+        implementation "org.embulk:embulk-util-timestamp:0.2.2"
 
-        testCompile "org.embulk:embulk-junit4:0.10.36"
-        testCompile "org.embulk:embulk-core:0.10.36"
-        testCompile "org.embulk:embulk-deps:0.10.36"
+        testImplementation "org.embulk:embulk-junit4:0.11.1"
+        testImplementation "org.embulk:embulk-core:0.11.1"
+        testImplementation "org.embulk:embulk-deps:0.11.1"
     }
 
     javadoc {

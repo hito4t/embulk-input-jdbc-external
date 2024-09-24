@@ -28,7 +28,7 @@ import static org.junit.Assert.assertThat;
 
 public class IncrementalTest
 {
-    private static final String BASIC_RESOURCE_PATH = "org/embulk/input/oracle/test/expect/incremental/";
+    private static final String BASIC_RESOURCE_PATH = "/org/embulk/input/oracle/test/expect/incremental/";
 
     private static ConfigSource loadYamlResource(TestingEmbulk embulk, String fileName)
     {
